@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "themSP";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+@using DOAN_VIETNAMLAM.Models;
+@model List<THELOAI>
+
+<div class="container-fluid login-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <form action="@Url.Action("xuLythemSp")" method="post" enctype="multipart/form-data">
+                    <div class="container login-table">
+                        <hr />
+
+                     
+                        <label for="maloai"><b>Mã Loại</b></label>
+                        <br />
+                       <select  name="maloai" style="width:100%; height:40px; background-color:#e1d5d5;">
+                          @foreach (var i in Model)
+                          {
+                              <option value="@i.MALOAI">@i.TENLOAI</option>
+                          }
+                       </select>
+                        <br />
+                        <label for="tentrangsuc"><b>Tên Trang Sức</b></label>
+                        <input type="text" name="tentrangsuc"  required />
+                        <label for="gia"><b>Giá</b></label>
+                        <input type="text" name="gia"  required />
+                        <label for="hinh"><b>Hình Ảnh</b></label>
+                        <br />
+                        <input type="file" name="hinh" required />
+                        <br />
+                        <label for="ngaydang"><b>Ngày Đăng</b></label><br />
+                        <label>@DateTime.Now.ToString("dd/MM/yyyy")</label></td><br />
+                        <label for="mota"><b>Mô tả</b></label>
+                        <input  type="text" name="mota"  required />
+                        <input type="submit" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

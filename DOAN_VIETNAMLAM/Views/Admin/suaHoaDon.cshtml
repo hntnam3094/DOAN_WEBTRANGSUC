@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "suaHoaDon";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using DOAN_VIETNAMLAM.Models;
+@model HOADON
+
+<div class="container-fluid login-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <form action="#" method="post">
+                    <div class="container login-table">
+                        <hr />
+
+                        <label for="mahd"><b>Mã Hóa đơn</b></label>
+                        <input type="text" name="mahd" value="@Model.MAHD" required />
+                        <label for="matk"><b>Mã Tài khoản</b></label>
+                        <input type="text" name="matk" value="@Model.MATAIKHOAN" required />
+                        <label for="ngaylap"><b> Ngày lập</b></label>
+                        <input type="text" name="ngaylap" value="@Model.NGAYLAP" required />
+                        <label for="ngaygiao"><b>Ngày giao</b></label>
+                        <input type="text" name="ngaygiao" value="@Model.NGAYGIAO" required />
+                        <label for="tongtien"><b>Tổng tiền</b></label>
+                        <input type="text"  name="tongtien"  value="@Model.TONGTIEN" required />
+                        <input type="submit" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

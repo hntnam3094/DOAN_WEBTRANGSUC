@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "chitietHoaDOn";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+@using DOAN_VIETNAMLAM.Models;
+@model List<CHITIETHD>
+
+<table class="table">
+        <tr>
+            <th >Mã Hóa Đơn</th>
+            <th >Mã Trang Sức</th>
+            <th >Số lượng</th>
+           
+            
+
+        </tr>
+
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.MAHD</td>
+                 <td>@i.MATRANGSUC</td>
+                 <td>@i.SOLUONG</td>
+                
+            </tr>
+        }
+       
+
+</table>

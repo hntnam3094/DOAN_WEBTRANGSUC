@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "HoaDon";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using DOAN_VIETNAMLAM.Models;
+@model List<HOADON>
+
+<table class="table">
+        <tr>
+            <th >Mã Hóa Đỡn</th>
+            <th >Mã TK</th>
+            <th >Ngày Lập</th>
+            <th >Ngày Giao</th>
+            <th >Tổng tiền</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.MAHD</td>
+                 <td>@i.MATAIKHOAN</td>
+                 <td>@i.NGAYLAP</td>
+                 <td>@i.NGAYGIAO</td>
+                <td>@i.TONGTIEN</td> 
+                <th ><a href="@Url.Action("suaHoaDon", new {mahd = @i.MAHD })"><input class="btn-ad-sua-kh" type="submit" value="Sửa"/></a></th>
+                 <th ><a href="@Url.Action("chitietHoaDOn", new {mahd = @i.MAHD })"><input class="btn-ad-sua-kh" type="submit" value="Chi tiết"/></a></th>
+            </tr>
+        }
+       
+
+</table>
